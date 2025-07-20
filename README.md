@@ -68,8 +68,12 @@ exch-emu/
 │   └── ...                        # Other pairs
 ├── data/                          # Saved state
 ├── config/                        # Configuration files
-├── test_api.py                    # API tests
-├── test_symbols.py                # Symbol tests
+├── tests/                         # Test suite
+│   ├── test_api.py               # API tests
+│   ├── test_symbols.py           # Symbol tests
+│   ├── test_multiple_symbols.py  # Multi-symbol tests
+│   ├── test_immediate_execution.py # Immediate execution tests
+│   └── README.md                 # Test documentation
 └── README.md                      # Documentation
 ```
 
@@ -262,13 +266,26 @@ Data is saved in the `data/` folder in JSON format.
 
 ### Running Tests
 ```bash
-python test_api.py
+# Run all tests
+python -m pytest tests/
+
+# Run individual test files
+python tests/test_api.py
+python tests/test_symbols.py
+python tests/test_multiple_symbols.py
+python tests/test_immediate_execution.py
 ```
 
 ### Checking Endpoints
 ```bash
+# Health check
 curl http://localhost:8000/health
+
+# Get klines data
 curl http://localhost:8000/openApi/swap/v3/quote/klines?symbol=ADA-USDT
+
+# Run automated tests
+python tests/test_api.py
 ```
 
 ## 📊 Monitoring
