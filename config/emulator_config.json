@@ -1,0 +1,52 @@
+{
+  "simulation": {
+    "start_time": null,
+    "time_step_minutes": 1,
+    "auto_save_interval": 60,
+    "enable_logging": true,
+    "log_level": "INFO"
+  },
+  "trading": {
+    "default_leverage": 10,
+    "max_leverage": 100,
+    "commission_rate": 0.0007,
+    "min_commission": 0.04,
+    "enable_slippage": true,
+    "slippage_config": {
+      "0": 0.0001,
+      "100": 0.0005,
+      "1000": 0.001,
+      "10000": 0.002
+    }
+  },
+  "data": {
+    "klines_data_path": "klines_data",
+    "state_data_path": "data",
+    "enable_caching": true,
+    "cache_size": 1000
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "enable_cors": true,
+    "rate_limit": 1000
+  },
+  "risk_management": {
+    "max_position_size": 10000,
+    "max_daily_loss": 1000,
+    "enable_position_limits": true,
+    "max_positions_per_symbol": 1
+  },
+  "supported_symbols": [
+    "BTC-USDT",
+    "ETH-USDT",
+    "ADA-USDT",
+    "SOL-USDT",
+    "AVAX-USDT",
+    "BNB-USDT",
+    "XRP-USDT",
+    "LTC-USDT",
+    "OP-USDT",
+    "UNI-USDT"
+  ]
+}
